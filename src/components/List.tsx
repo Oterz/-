@@ -52,7 +52,7 @@ const List: React.FC = () => {
     const formatted = flattenRows(data);
     setTasks(formatted);
 
-    // ✅ Если нет данных — создать рутовую строку
+    // Если нет данных — создать рутовую строку
     if (formatted.length === 0) {
       handleAddRow(null, 0);
     }

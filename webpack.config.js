@@ -6,6 +6,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
+    publicPath: '/', 
     clean: true,
   },
   resolve: {
@@ -32,7 +33,9 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './public/index.html',
     }),
+    
   ],
+  
   devServer: {
     static: {
       directory: path.join(__dirname, 'public'),
@@ -42,5 +45,8 @@ module.exports = {
     open: true,
     historyApiFallback: true,
   },
-  mode: 'development',
+  mode: process.env.NODE_ENV || 'development', 
+  optimization: {
+    minimize: process.env.NODE_ENV === 'production',
+  },
 };
