@@ -1,0 +1,33 @@
+.app {
+    display: flex;
+    flex-direction: column;
+    height: 100vh; 
+  
+    &__body {
+      display: flex;
+      flex: 1 1 auto;
+    }
+  
+    &__content {
+      flex: 1 1 auto;
+      display: flex;
+      flex-direction: column;
+      overflow: auto;
+      
+      background-color: #1F1F21; // фон справа
+    }
+    .document-window {
+        color: white;
+        border-bottom: solid 1px #414144;
+        height: 48px;
+      
+        &__text { // теперь правильно
+          border-right: solid 1px #414144;
+          white-space: nowrap;
+          display: flex;
+          height: 100%;
+          padding: 15px;
+          width: fit-content;
+        }
+      }
+  }
